@@ -1,0 +1,525 @@
+/* ==================================
+   GRUNDEINSTELLUNGEN
+================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0c0c0c;
+
+  color: white;
+
+  font-family: Arial, sans-serif;
+}
+
+/* ==================================
+   NAVIGATION
+================================== */
+
+header {
+  height: 100px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 7%;
+}
+
+.logo {
+  font-size: 28px;
+
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+
+  gap: 40px;
+}
+
+nav a {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  transition: opacity 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.5;
+}
+
+/* ==================================
+   HERO
+================================== */
+
+.hero {
+  min-height: 75vh;
+
+  padding: 0 7%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.hero h2 {
+  font-size: clamp(45px, 6vw, 95px);
+
+  line-height: 0.92;
+
+  letter-spacing: -3px;
+}
+
+.hero p {
+  margin-top: 30px;
+
+  color: #777;
+
+  font-size: 15px;
+
+  letter-spacing: 3px;
+}
+
+.hero-button {
+  width: fit-content;
+
+  margin-top: 35px;
+
+  padding-bottom: 8px;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid white;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+}
+
+/* ==================================
+   PORTFOLIO
+================================== */
+
+.portfolio {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 120px 7%;
+}
+
+/* ==================================
+   PORTFOLIO TITEL
+================================== */
+
+.portfolio-title {
+  position: sticky;
+
+  top: 150px;
+
+  width: 35%;
+
+  z-index: 1;
+}
+
+.portfolio-title p {
+  margin-bottom: 20px;
+
+  color: #777;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+.portfolio-title h2 {
+  font-family: Georgia, serif;
+
+  font-weight: normal;
+
+  font-size: clamp(45px, 5vw, 80px);
+
+  line-height: 0.9;
+}
+
+/* ==================================
+   GALERIE
+================================== */
+
+.gallery {
+  width: 60%;
+
+  margin-left: 35%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 60px;
+}
+
+/* ==================================
+   FOTO KARTE
+================================== */
+
+.gallery-photo {
+  position: relative;
+
+  background-color: #181818;
+
+  padding: 10px;
+
+  border-radius: 4px;
+}
+
+/* ==================================
+   WICHTIG:
+   BILDBEREICH
+================================== */
+
+.image-wrapper {
+  width: 100%;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+/* ==================================
+   BILD
+================================== */
+
+.image-wrapper img {
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  transition: transform 0.45s ease;
+}
+
+/* ==================================
+   HOVER
+
+   Nur das Bild innerhalb des
+   Wrappers wird vergrössert.
+================================== */
+
+.image-wrapper:hover img {
+  transform: scale(1.07);
+}
+
+/* ==================================
+   BILDGRÖSSEN
+================================== */
+
+.gallery-photo.large {
+  width: 400px;
+}
+
+.gallery-photo.medium {
+  width: 300px;
+}
+
+.gallery-photo.small {
+  width: 300px;
+}
+
+/* ==================================
+   POSITIONEN
+================================== */
+
+.photo-1 {
+  align-self: center;
+}
+
+.photo-2 {
+  align-self: center;
+}
+
+.photo-3 {
+  align-self: center;
+}
+
+.photo-4 {
+  align-self: center;
+}
+
+.photo-5 {
+  align-self: center;
+}
+
+.photo-6 {
+  align-self: center;
+}
+
+/* ==================================
+   TEXT OBERHALB BILD
+================================== */
+
+.photo-category {
+  margin-bottom: 8px;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color: #aaa;
+}
+
+/* ==================================
+   TEXT UNTERHALB BILD
+================================== */
+
+.photo-info {
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: 10px;
+
+  min-height: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  background-color: #181818;
+
+  color: #777;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+}
+
+/* ==================================
+   ABOUT
+================================== */
+
+.about {
+  min-height: 80vh;
+
+  padding: 150px 15%;
+
+  background-color: #151515;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.section-name {
+  margin-bottom: 30px;
+
+  color: #777;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+.about h2 {
+  max-width: 900px;
+
+  font-size: clamp(40px, 5vw, 75px);
+
+  line-height: 0.95;
+}
+
+.about-text {
+  max-width: 550px;
+
+  margin-top: 40px;
+
+  color: #999;
+
+  line-height: 1.8;
+}
+
+/* ==================================
+   KONTAKT
+================================== */
+
+.contact {
+  min-height: 70vh;
+
+  padding: 120px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.contact p {
+  color: #777;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+.contact h2 {
+  margin: 25px 0 50px;
+
+  font-size: clamp(40px, 5vw, 75px);
+}
+
+.contact a {
+  padding: 17px 28px;
+
+  background-color: white;
+
+  color: black;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  transition: 0.3s;
+}
+
+.contact a:hover {
+  background-color: #aaa;
+}
+
+/* ==================================
+   FOOTER
+================================== */
+
+footer {
+  padding: 35px 7%;
+
+  border-top: 1px solid #222;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #555;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+/* ==================================
+   TABLET / HANDY
+================================== */
+
+@media (max-width: 800px) {
+  /* NAVIGATION */
+
+  header {
+    padding: 0 25px;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 9px;
+  }
+
+  /* HERO */
+
+  .hero {
+    padding: 0 25px;
+  }
+
+  .hero h2 {
+    letter-spacing: -1px;
+  }
+
+  /* PORTFOLIO */
+
+  .portfolio {
+    padding: 100px 25px;
+  }
+
+  .portfolio-title {
+    position: relative;
+
+    top: 0;
+
+    width: 100%;
+
+    margin-bottom: 80px;
+  }
+
+  /* GALERIE */
+
+  .gallery {
+    width: 100%;
+
+    margin-left: 0;
+
+    gap: 70px;
+  }
+
+  /* BILDER */
+
+  .gallery-photo.large {
+    width: 80%;
+  }
+
+  .gallery-photo.medium {
+    width: 65%;
+  }
+
+  .gallery-photo.small {
+    width: 48%;
+  }
+
+  /* ABOUT */
+
+  .about {
+    padding: 100px 30px;
+  }
+
+  /* FOOTER */
+
+  footer {
+    padding: 30px 25px;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+}
