@@ -352,13 +352,6 @@ footer {
 }
 
 /* ==================================
-   TABLET / HANDY
-================================== */
-
-/* ==================================
-   HANDY
-================================== */
-/* ==================================
    HANDY VERSION
 ================================== */
 
@@ -394,13 +387,13 @@ footer {
 
 
   /* ==================================
-     STARTSEITE / HERO
+     HERO / STARTSEITE
   ================================== */
 
   .hero {
     min-height: 60vh;
 
-    padding: 30px 15px;
+    padding: 20px 15px 40px;
 
     display: flex;
     flex-direction: column;
@@ -495,10 +488,11 @@ footer {
   .gallery-photo img {
     width: 100%;
 
-    /* QUERFORMAT */
+    /* HOCHFORMAT */
     aspect-ratio: 3 / 4;
 
     object-fit: cover;
+    object-position: center;
 
     display: block;
   }
