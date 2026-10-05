@@ -1,190 +1,473 @@
-<!doctype html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8" />
+/* ==================================
+   GRUNDEINSTELLUNGEN
+================================== */
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <title>Swiss Football Photography</title>
+html {
+  scroll-behavior: smooth;
+}
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
+body {
+  background-color: #0c0c0c;
+  color: white;
+  font-family: Arial, sans-serif;
+}
 
-  <body>
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+/* ==================================
+   NAVIGATION
+================================== */
 
-    <header>
-      <h1 class="logo">MHVISUALS.</h1>
+header {
+  height: 100px;
 
-      <nav>
-        <a href="#portfolio"> PORTFOLIO </a>
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-        <a href="#about"> ÜBER MICH </a>
+  padding: 0 7%;
+}
 
-        <a href="#contact"> KONTAKT </a>
-      </nav>
-    </header>
+.logo {
+  font-size: 28px;
+  letter-spacing: 2px;
+}
 
-    <!-- =========================
-         STARTSEITE
-    ========================== -->
+nav {
+  display: flex;
+  gap: 40px;
+}
 
-    <section class="hero">
-      <h2>
-        CAPTURE THE GAME.<br />
-        FEEL THE MOMENT.
-      </h2>
+nav a {
+  color: white;
+  text-decoration: none;
 
-      <p>Football Photography</p>
+  font-size: 11px;
+  letter-spacing: 2px;
 
-      <a href="#portfolio" class="hero-button"> PORTFOLIO ANSEHEN </a>
-    </section>
+  transition: opacity 0.3s;
+}
 
-    <!-- =========================
-         PORTFOLIO
-    ========================== -->
+nav a:hover {
+  opacity: 0.5;
+}
 
-    <section id="portfolio" class="portfolio">
-      <!-- TITEL -->
+/* ==================================
+   HERO
+================================== */
 
-      <div class="portfolio-title">
-        <p>SELECTED WORK</p>
+.hero {
+  min-height: 75vh;
 
-        <h2>
-          FOOTBALL<br />
-          STORIES.
-        </h2>
-      </div>
+  padding: 0 7%;
 
-      <!-- =====================
-             GALERIE
-        ====================== -->
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-      <div class="gallery">
-        <!-- =====================
-                 FOTO 1
-            ====================== -->
+.hero h2 {
+  font-size: clamp(45px, 6vw, 95px);
 
-        <div class="gallery-photo small photo-1">
-          <!-- WICHTIG:
-                     Bild liegt im Wrapper -->
+  line-height: 0.92;
+  letter-spacing: -3px;
+}
 
-          <div class="image-wrapper">
-            <img src="img/Download (1).jpg" alt="Fussball Fotografie" />
-          </div>
+.hero p {
+  margin-top: 30px;
 
-          <!-- Text liegt AUSSERHALB -->
+  color: #777;
 
-          <div class="photo-info"></div>
-        </div>
+  font-size: 15px;
+  letter-spacing: 3px;
+}
 
-        <!-- =====================
-                 FOTO 2
-            ====================== -->
+.hero-button {
+  width: fit-content;
 
-        <div class="gallery-photo large photo-2">
-          <div class="image-wrapper">
-            <img
-              src="img/Download (2).jpg"
-              alt="Matchday Fussball Fotografie"
-            />
-          </div>
+  margin-top: 35px;
+  padding-bottom: 8px;
 
-          <div class="photo-info"></div>
-        </div>
+  color: white;
+  text-decoration: none;
 
-        <!-- =====================
-                 FOTO 3
-            ====================== -->
+  border-bottom: 1px solid white;
 
-        <div class="gallery-photo small photo-3">
-          <div class="image-wrapper">
-            <img src="img/Download (3).jpg" alt="Fussball Details" />
-          </div>
+  font-size: 11px;
+  letter-spacing: 2px;
+}
 
-          <div class="photo-info"></div>
-        </div>
+/* ==================================
+   PORTFOLIO
+================================== */
 
-        <!-- =====================
-                 FOTO 4
-            ====================== -->
+.portfolio {
+  position: relative;
 
-        <div class="gallery-photo medium photo-4">
-          <div class="image-wrapper">
-            <img src="img/Download.jpg" alt="Fussball Emotionen" />
-          </div>
+  min-height: 100vh;
 
-          <div class="photo-info"></div>
-        </div>
+  padding: 120px 7%;
+}
 
-        <!-- =====================
-                 FOTO 5
-            ====================== -->
+/* ==================================
+   PORTFOLIO TITEL
+================================== */
 
-        <div class="gallery-photo large photo-5">
-          <div class="image-wrapper">
-            <img src="img/Noa Lang X David Neres.jpg" alt="Fussballspiel" />
-          </div>
+.portfolio-title {
+  position: relative;
 
-          <div class="photo-info"></div>
-        </div>
+  width: 100%;
 
-        <!-- =====================
-                 FOTO 6
-            ====================== -->
+  margin-bottom: 60px;
+}
 
-        <div class="gallery-photo small photo-6">
-          <div class="image-wrapper">
-            <img src="img/football6.jpg" alt="Fussball Spieler" />
-          </div>
+.portfolio-title p {
+  margin-bottom: 20px;
 
-          <div class="photo-info"></div>
-        </div>
-      </div>
-    </section>
+  color: #777;
 
-    <!-- =========================
-         ÜBER MICH
-    ========================== -->
+  font-size: 10px;
+  letter-spacing: 3px;
+}
 
-    <section id="about" class="about">
-      <p class="section-name">ABOUT ME</p>
+.portfolio-title h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
 
-      <h2>
-        FOOTBALL IS MORE<br />
-        THAN JUST A GAME.
-      </h2>
+  font-size: clamp(45px, 5vw, 80px);
 
-      <p class="about-text">
-        Ich fotografiere die besonderen Momente auf und neben dem Fussballplatz.
-        Emotionen, Zweikämpfe, Tore und die Leidenschaft, die den Fussball
-        besonders macht.
-      </p>
-    </section>
+  line-height: 0.9;
+}
 
-    <!-- =========================
-         KONTAKT
-    ========================== -->
+/* ==================================
+   GALERIE
+================================== */
 
-    <section id="contact" class="contact">
-      <p>LET'S WORK TOGETHER</p>
+.gallery {
+  width: 100%;
 
-      <h2>BUCHUNG</h2>
+  display: grid;
 
-      <a href="mailto:mejdin@email.ch"> KONTAKT AUFNEHMEN </a>
-    </section>
+  /* 4 BILDER NEBENEINANDER */
+  grid-template-columns: repeat(4, 1fr);
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+  gap: 15px;
+}
 
-    <footer>
-      <p>© 2026 MHVISUALS Football Photography</p>
+.gallery-photo {
+  width: 100%;
+  overflow: hidden;
+}
 
-      <p></p>
-      <p>076 451 89 02 / Football Photography</p>
-    </footer>
-  </body>
-</html>
+.gallery-photo img {
+  width: 100%;
+
+  /* Höhe wie ungefähr auf deinem Beispiel */
+  height: 480px;
+
+  display: block;
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.gallery-photo:hover img {
+  transform: scale(1.04);
+}
+
+/* ==================================
+   HOVER
+================================== */
+
+.gallery-photo:hover img {
+  transform: scale(1.05);
+}
+
+/* ==================================
+   TEXT OBERHALB BILD
+================================== */
+
+.photo-category {
+  padding: 10px;
+
+  color: #aaa;
+
+  font-size: 8px;
+  letter-spacing: 2px;
+  background: none;
+}
+
+/* ==================================
+   TEXT UNTERHALB BILD
+================================== */
+
+.photo-info {
+  min-height: 35px;
+
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  color: #777;
+
+  font-size: 8px;
+  letter-spacing: 1px;
+  background: none;
+}
+
+/* ==================================
+   ABOUT
+================================== */
+
+.about {
+  min-height: 80vh;
+
+  padding: 150px 15%;
+
+  background-color: #151515;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-name {
+  margin-bottom: 30px;
+
+  color: #777;
+
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.about h2 {
+  max-width: 900px;
+
+  font-size: clamp(40px, 5vw, 75px);
+
+  line-height: 0.95;
+}
+
+.about-text {
+  max-width: 550px;
+
+  margin-top: 40px;
+
+  color: #999;
+
+  line-height: 1.8;
+}
+
+/* ==================================
+   KONTAKT
+================================== */
+
+.contact {
+  min-height: 70vh;
+
+  padding: 120px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.contact p {
+  color: #777;
+
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.contact h2 {
+  margin: 25px 0 50px;
+
+  font-size: clamp(40px, 5vw, 75px);
+}
+
+.contact a {
+  padding: 17px 28px;
+
+  background-color: white;
+  color: black;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  transition: 0.3s;
+}
+
+.contact a:hover {
+  background-color: #aaa;
+}
+
+/* ==================================
+   FOOTER
+================================== */
+
+footer {
+  padding: 35px 7%;
+
+  border-top: 1px solid #222;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #555;
+
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+/* ==================================
+   TABLET / HANDY
+================================== */
+
+@media (max-width: 800px) {
+  /* ==============================
+     NAVIGATION
+  ============================== */
+
+  header {
+    height: 80px;
+
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  /* ==============================
+     HERO
+  ============================== */
+
+  .hero {
+    min-height: 75vh;
+
+    padding: 0 20px;
+  }
+
+  .hero h2 {
+    font-size: 42px;
+
+    line-height: 0.95;
+    letter-spacing: -2px;
+  }
+
+  .hero p {
+    font-size: 11px;
+  }
+
+  /* ==============================
+     PORTFOLIO
+  ============================== */
+
+  .portfolio {
+    padding: 80px 15px;
+  }
+
+  .portfolio-title {
+    width: 100%;
+
+    margin-bottom: 40px;
+  }
+
+  .portfolio-title h2 {
+    font-size: 45px;
+  }
+
+  /* ==============================
+     GALERIE
+  ============================== */
+
+  .gallery {
+    width: 100%;
+
+    /* HANDY = EINE SPALTE */
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 8px;
+  }
+
+  /* ==============================
+     ALLE BILDER GLEICH GROSS
+  ============================== */
+
+  .gallery-photo {
+    width: 100%;
+  }
+
+  .gallery-photo img {
+    width: 100%;
+
+    /* ALLE BILDER GLEICH HOCH */
+    height: 420px;
+
+    object-fit: cover;
+  }
+
+  /* ==============================
+     ABOUT
+  ============================== */
+
+  .about {
+    min-height: auto;
+
+    padding: 100px 25px;
+  }
+
+  .about h2 {
+    font-size: 40px;
+  }
+
+  /* ==============================
+     KONTAKT
+  ============================== */
+
+  .contact {
+    min-height: 60vh;
+
+    padding: 80px 20px;
+  }
+
+  .contact h2 {
+    font-size: 40px;
+  }
+
+  /* ==============================
+     FOOTER
+  ============================== */
+
+  footer {
+    padding: 30px 20px;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+}
