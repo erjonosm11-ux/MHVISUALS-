@@ -466,7 +466,7 @@ footer {
     width: 100%;
 
     /* Hochformat bleibt erhalten */
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 2;
 
     object-fit: cover;
     display: block;
