@@ -354,20 +354,16 @@ footer {
 /* ==================================
    HANDY VERSION
 ================================== */
+/* ==================================
+   HANDY VERSION
+================================== */
 
 @media (max-width: 800px) {
 
-  /* ==================================
-     NAVIGATION
-  ================================== */
-
+  /* NAVIGATION */
   header {
     height: 65px;
-    padding: 0 15px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0 12px;
   }
 
   .logo {
@@ -376,24 +372,19 @@ footer {
   }
 
   nav {
-    display: flex;
-    gap: 10px;
+    gap: 8px;
   }
 
   nav a {
     font-size: 7px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
 
 
-  /* ==================================
-     HERO / STARTSEITE
-  ================================== */
-
+  /* HERO */
   .hero {
-    min-height: 60vh;
-
-    padding: 20px 15px 40px;
+    min-height: 55vh;
+    padding: 10px 12px 30px;
 
     display: flex;
     flex-direction: column;
@@ -401,146 +392,139 @@ footer {
   }
 
   .hero h2 {
-    font-size: 40px;
-
+    font-size: 38px;
     line-height: 0.95;
     letter-spacing: -2px;
   }
 
   .hero p {
-    margin-top: 20px;
-
-    font-size: 11px;
-    letter-spacing: 2px;
+    margin-top: 18px;
+    font-size: 10px;
   }
 
   .hero-button {
-    margin-top: 25px;
-
+    margin-top: 20px;
     font-size: 9px;
   }
 
 
-  /* ==================================
-     PORTFOLIO
-  ================================== */
-
+  /* PORTFOLIO */
   .portfolio {
     min-height: auto;
-
-    padding: 50px 10px;
+    padding: 45px 8px;
   }
 
-
-  /* ==================================
-     PORTFOLIO TITEL
-  ================================== */
-
   .portfolio-title {
-    position: relative;
-
     width: 100%;
-
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   .portfolio-title p {
-    margin-bottom: 12px;
-
-    font-size: 9px;
+    margin-bottom: 10px;
+    font-size: 8px;
   }
 
   .portfolio-title h2 {
-    font-size: 42px;
-
+    font-size: 40px;
     line-height: 0.9;
   }
 
 
-  /* ==================================
-     GALERIE
-  ================================== */
-
+  /* GALERIE */
   .gallery {
     width: 100%;
-
     margin: 0;
 
     display: grid;
 
-    /* 2 BILDER NEBENEINANDER */
-    grid-template-columns: repeat(2, 1fr);
+    /* 2 Bilder nebeneinander */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 8px;
   }
 
 
-  /* ==================================
-     BILDER
-  ================================== */
-
+  /* EINZELNE FOTO-KARTE */
   .gallery-photo {
     width: 100%;
+    min-width: 0;
+
+    /* NICHT hier verstecken,
+       sonst wird auch Text abgeschnitten */
+    overflow: visible;
+  }
+
+
+  /* BILD-WRAPPER */
+  .image-wrapper {
+    width: 100%;
+
+    /* Genau 3:4 */
+    aspect-ratio: 3 / 4;
 
     overflow: hidden;
   }
 
-  .gallery-photo img {
-    width: 100%;
 
-    /* HOCHFORMAT */
-    aspect-ratio: 3 / 4;
+  /* FOTO */
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
 
     object-fit: cover;
     object-position: center;
-
-    display: block;
   }
 
 
-  /* ==================================
-     TEXT BEI DEN BILDERN
-  ================================== */
-
+  /* TEXT UNTER DEM BILD */
   .photo-info {
+    min-height: 0;
+
     padding: 6px 2px;
 
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
-    gap: 5px;
+    gap: 4px;
+
+    background: none;
+
+    color: #777;
 
     font-size: 7px;
     letter-spacing: 0.5px;
   }
 
+
+  /* TEXT OBERHALB */
   .photo-category {
     padding: 6px 2px;
+
+    background: none;
+
+    color: #aaa;
 
     font-size: 7px;
     letter-spacing: 1px;
   }
 
 
-  /* ==================================
-     ABOUT
-  ================================== */
-
+  /* ABOUT */
   .about {
     min-height: auto;
-
-    padding: 80px 20px;
+    padding: 70px 20px;
   }
 
   .section-name {
     margin-bottom: 20px;
-
     font-size: 9px;
   }
 
   .about h2 {
     font-size: 36px;
-
     line-height: 1;
   }
 
@@ -552,14 +536,10 @@ footer {
   }
 
 
-  /* ==================================
-     KONTAKT
-  ================================== */
-
+  /* KONTAKT */
   .contact {
-    min-height: 55vh;
-
-    padding: 70px 20px;
+    min-height: 50vh;
+    padding: 60px 20px;
   }
 
   .contact p {
@@ -568,21 +548,16 @@ footer {
 
   .contact h2 {
     margin: 20px 0 35px;
-
     font-size: 38px;
   }
 
   .contact a {
     padding: 14px 20px;
-
     font-size: 9px;
   }
 
 
-  /* ==================================
-     FOOTER
-  ================================== */
-
+  /* FOOTER */
   footer {
     padding: 25px 15px;
 
