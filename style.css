@@ -358,23 +358,32 @@ footer {
 /* ==================================
    HANDY
 ================================== */
+/* ==================================
+   HANDY VERSION
+================================== */
 
 @media (max-width: 800px) {
 
-  /* ==============================
+  /* ==================================
      NAVIGATION
-  ============================== */
+  ================================== */
 
   header {
     height: 65px;
     padding: 0 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .logo {
     font-size: 18px;
+    letter-spacing: 1px;
   }
 
   nav {
+    display: flex;
     gap: 10px;
   }
 
@@ -384,45 +393,59 @@ footer {
   }
 
 
-  /* ==============================
-     HERO
-  ============================== */
+  /* ==================================
+     STARTSEITE / HERO
+  ================================== */
 
   .hero {
-    /* Weniger Abstand nach der Navigation */
-    min-height: 55vh;
+    min-height: 60vh;
 
-    padding: 20px 15px 40px;
+    padding: 30px 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .hero h2 {
-    font-size: 38px;
+    font-size: 40px;
 
     line-height: 0.95;
-    letter-spacing: -1.5px;
+    letter-spacing: -2px;
   }
 
   .hero p {
     margin-top: 20px;
 
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 2px;
   }
 
   .hero-button {
     margin-top: 25px;
+
+    font-size: 9px;
   }
 
 
-  /* ==============================
+  /* ==================================
      PORTFOLIO
-  ============================== */
+  ================================== */
 
   .portfolio {
-    padding: 60px 15px;
+    min-height: auto;
+
+    padding: 50px 10px;
   }
 
+
+  /* ==================================
+     PORTFOLIO TITEL
+  ================================== */
+
   .portfolio-title {
+    position: relative;
+
     width: 100%;
 
     margin-bottom: 30px;
@@ -430,48 +453,84 @@ footer {
 
   .portfolio-title p {
     margin-bottom: 12px;
+
+    font-size: 9px;
   }
 
   .portfolio-title h2 {
-    font-size: 40px;
+    font-size: 42px;
+
+    line-height: 0.9;
   }
 
 
-  /* ==============================
+  /* ==================================
      GALERIE
-  ============================== */
+  ================================== */
 
   .gallery {
-    /* Galerie insgesamt kleiner */
-    width: 50%;
+    width: 100%;
 
-    margin: 0 auto;
+    margin: 0;
 
-    /* 2 Bilder nebeneinander */
+    display: grid;
+
+    /* 2 BILDER NEBENEINANDER */
     grid-template-columns: repeat(2, 1fr);
 
     gap: 8px;
   }
 
 
-  /* ==============================
+  /* ==================================
      BILDER
-  ============================== */
+  ================================== */
 
   .gallery-photo {
     width: 100%;
+
+    overflow: hidden;
   }
 
   .gallery-photo img {
     width: 100%;
+
+    /* QUERFORMAT */
     aspect-ratio: 5 / 4;
+
     object-fit: cover;
+
     display: block;
   }
 
-  /* ==============================
+
+  /* ==================================
+     TEXT BEI DEN BILDERN
+  ================================== */
+
+  .photo-info {
+    padding: 6px 2px;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 5px;
+
+    font-size: 7px;
+    letter-spacing: 0.5px;
+  }
+
+  .photo-category {
+    padding: 6px 2px;
+
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+
+  /* ==================================
      ABOUT
-  ============================== */
+  ================================== */
 
   .about {
     min-height: auto;
@@ -479,14 +538,29 @@ footer {
     padding: 80px 20px;
   }
 
+  .section-name {
+    margin-bottom: 20px;
+
+    font-size: 9px;
+  }
+
   .about h2 {
     font-size: 36px;
+
+    line-height: 1;
+  }
+
+  .about-text {
+    margin-top: 25px;
+
+    font-size: 14px;
+    line-height: 1.6;
   }
 
 
-  /* ==============================
+  /* ==================================
      KONTAKT
-  ============================== */
+  ================================== */
 
   .contact {
     min-height: 55vh;
@@ -494,20 +568,34 @@ footer {
     padding: 70px 20px;
   }
 
+  .contact p {
+    font-size: 9px;
+  }
+
   .contact h2 {
-    font-size: 36px;
+    margin: 20px 0 35px;
+
+    font-size: 38px;
+  }
+
+  .contact a {
+    padding: 14px 20px;
+
+    font-size: 9px;
   }
 
 
-  /* ==============================
+  /* ==================================
      FOOTER
-  ============================== */
+  ================================== */
 
   footer {
-    padding: 25px 20px;
+    padding: 25px 15px;
 
     flex-direction: column;
 
     gap: 8px;
+
+    font-size: 8px;
   }
 }
