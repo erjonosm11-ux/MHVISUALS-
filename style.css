@@ -464,10 +464,7 @@ footer {
 
   .gallery-photo img {
     width: 100%;
-
-    /* Hochformat bleibt erhalten */
-    aspect-ratio: 3 / 2;
-
+    aspect-ratio: 5 / 4;
     object-fit: cover;
     display: block;
   }
