@@ -14,9 +14,7 @@ html {
 
 body {
   background-color: #0c0c0c;
-
   color: white;
-
   font-family: Arial, sans-serif;
 }
 
@@ -28,7 +26,6 @@ header {
   height: 100px;
 
   display: flex;
-
   justify-content: space-between;
   align-items: center;
 
@@ -37,23 +34,19 @@ header {
 
 .logo {
   font-size: 28px;
-
   letter-spacing: 2px;
 }
 
 nav {
   display: flex;
-
   gap: 40px;
 }
 
 nav a {
   color: white;
-
   text-decoration: none;
 
   font-size: 11px;
-
   letter-spacing: 2px;
 
   transition: opacity 0.3s;
@@ -73,9 +66,7 @@ nav a:hover {
   padding: 0 7%;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 }
 
@@ -83,7 +74,6 @@ nav a:hover {
   font-size: clamp(45px, 6vw, 95px);
 
   line-height: 0.92;
-
   letter-spacing: -3px;
 }
 
@@ -93,7 +83,6 @@ nav a:hover {
   color: #777;
 
   font-size: 15px;
-
   letter-spacing: 3px;
 }
 
@@ -101,17 +90,14 @@ nav a:hover {
   width: fit-content;
 
   margin-top: 35px;
-
   padding-bottom: 8px;
 
   color: white;
-
   text-decoration: none;
 
   border-bottom: 1px solid white;
 
   font-size: 11px;
-
   letter-spacing: 2px;
 }
 
@@ -132,13 +118,11 @@ nav a:hover {
 ================================== */
 
 .portfolio-title {
-  position: sticky;
+  position: relative;
 
-  top: 150px;
+  width: 100%;
 
-  width: 35%;
-
-  z-index: 1;
+  margin-bottom: 60px;
 }
 
 .portfolio-title p {
@@ -147,13 +131,11 @@ nav a:hover {
   color: #777;
 
   font-size: 10px;
-
   letter-spacing: 3px;
 }
 
 .portfolio-title h2 {
   font-family: Georgia, serif;
-
   font-weight: normal;
 
   font-size: clamp(45px, 5vw, 80px);
@@ -166,111 +148,43 @@ nav a:hover {
 ================================== */
 
 .gallery {
-  width: 60%;
+  width: 100%;
 
-  margin-left: 35%;
+  display: grid;
 
-  display: flex;
+  /* 3 GLEICH GROSSE SPALTEN */
+  grid-template-columns: repeat(3, 1fr);
 
-  flex-direction: column;
-
-  gap: 60px;
+  gap: 15px;
 }
 
 /* ==================================
-   FOTO KARTE
+   GALERIE BILDER
 ================================== */
 
 .gallery-photo {
-  position: relative;
-
-  background-color: #181818;
-
-  padding: 10px;
-
-  border-radius: 4px;
+  width: 100%;
 }
 
-/* ==================================
-   WICHTIG:
-   BILDBEREICH
-================================== */
+/* ALLE BILDER GLEICH GROSS */
 
-.image-wrapper {
+.gallery-photo img {
   width: 100%;
-
-  overflow: hidden;
-
-  position: relative;
-}
-
-/* ==================================
-   BILD
-================================== */
-
-.image-wrapper img {
-  width: 100%;
-
-  height: auto;
+  height: 500px;
 
   display: block;
 
-  transition: transform 0.45s ease;
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
 }
 
 /* ==================================
    HOVER
-
-   Nur das Bild innerhalb des
-   Wrappers wird vergrössert.
 ================================== */
 
-.image-wrapper:hover img {
-  transform: scale(1.07);
-}
-
-/* ==================================
-   BILDGRÖSSEN
-================================== */
-
-.gallery-photo.large {
-  width: 400px;
-}
-
-.gallery-photo.medium {
-  width: 300px;
-}
-
-.gallery-photo.small {
-  width: 300px;
-}
-
-/* ==================================
-   POSITIONEN
-================================== */
-
-.photo-1 {
-  align-self: center;
-}
-
-.photo-2 {
-  align-self: center;
-}
-
-.photo-3 {
-  align-self: center;
-}
-
-.photo-4 {
-  align-self: center;
-}
-
-.photo-5 {
-  align-self: center;
-}
-
-.photo-6 {
-  align-self: center;
+.gallery-photo:hover img {
+  transform: scale(1.05);
 }
 
 /* ==================================
@@ -278,13 +192,13 @@ nav a:hover {
 ================================== */
 
 .photo-category {
-  margin-bottom: 8px;
-
-  font-size: 8px;
-
-  letter-spacing: 2px;
+  padding: 10px;
 
   color: #aaa;
+
+  font-size: 8px;
+  letter-spacing: 2px;
+  background: none;
 }
 
 /* ==================================
@@ -292,29 +206,21 @@ nav a:hover {
 ================================== */
 
 .photo-info {
-  position: relative;
+  min-height: 35px;
 
-  z-index: 5;
-
-  margin-top: 10px;
-
-  min-height: 18px;
+  padding: 10px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   gap: 15px;
 
-  background-color: #181818;
-
   color: #777;
 
   font-size: 8px;
-
   letter-spacing: 1px;
+  background: none;
 }
 
 /* ==================================
@@ -329,9 +235,7 @@ nav a:hover {
   background-color: #151515;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 }
 
@@ -341,7 +245,6 @@ nav a:hover {
   color: #777;
 
   font-size: 10px;
-
   letter-spacing: 3px;
 }
 
@@ -373,7 +276,6 @@ nav a:hover {
   padding: 120px 20px;
 
   display: flex;
-
   flex-direction: column;
 
   justify-content: center;
@@ -386,7 +288,6 @@ nav a:hover {
   color: #777;
 
   font-size: 10px;
-
   letter-spacing: 3px;
 }
 
@@ -400,15 +301,12 @@ nav a:hover {
   padding: 17px 28px;
 
   background-color: white;
-
   color: black;
 
   text-decoration: none;
 
   font-size: 11px;
-
   font-weight: bold;
-
   letter-spacing: 1px;
 
   transition: 0.3s;
@@ -428,13 +326,11 @@ footer {
   border-top: 1px solid #222;
 
   display: flex;
-
   justify-content: space-between;
 
   color: #555;
 
   font-size: 9px;
-
   letter-spacing: 1px;
 }
 
@@ -443,80 +339,132 @@ footer {
 ================================== */
 
 @media (max-width: 800px) {
-  /* NAVIGATION */
+  /* ==============================
+     NAVIGATION
+  ============================== */
 
   header {
-    padding: 0 25px;
+    height: 80px;
+
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 20px;
   }
 
   nav {
-    gap: 15px;
+    gap: 12px;
   }
 
   nav a {
-    font-size: 9px;
+    font-size: 8px;
+    letter-spacing: 1px;
   }
 
-  /* HERO */
+  /* ==============================
+     HERO
+  ============================== */
 
   .hero {
-    padding: 0 25px;
+    min-height: 75vh;
+
+    padding: 0 20px;
   }
 
   .hero h2 {
-    letter-spacing: -1px;
+    font-size: 42px;
+
+    line-height: 0.95;
+    letter-spacing: -2px;
   }
 
-  /* PORTFOLIO */
+  .hero p {
+    font-size: 11px;
+  }
+
+  /* ==============================
+     PORTFOLIO
+  ============================== */
 
   .portfolio {
-    padding: 100px 25px;
+    padding: 80px 15px;
   }
 
   .portfolio-title {
-    position: relative;
-
-    top: 0;
-
     width: 100%;
 
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 
-  /* GALERIE */
+  .portfolio-title h2 {
+    font-size: 45px;
+  }
+
+  /* ==============================
+     GALERIE
+  ============================== */
 
   .gallery {
     width: 100%;
 
-    margin-left: 0;
+    /* HANDY = EINE SPALTE */
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 70px;
+    gap: 8px;
   }
 
-  /* BILDER */
+  /* ==============================
+     ALLE BILDER GLEICH GROSS
+  ============================== */
 
-  .gallery-photo.large {
-    width: 80%;
+  .gallery-photo {
+    width: 100%;
   }
 
-  .gallery-photo.medium {
-    width: 65%;
+  .gallery-photo img {
+    width: 100%;
+
+    /* ALLE BILDER GLEICH HOCH */
+    height: 420px;
+
+    object-fit: cover;
   }
 
-  .gallery-photo.small {
-    width: 48%;
-  }
-
-  /* ABOUT */
+  /* ==============================
+     ABOUT
+  ============================== */
 
   .about {
-    padding: 100px 30px;
+    min-height: auto;
+
+    padding: 100px 25px;
   }
 
-  /* FOOTER */
+  .about h2 {
+    font-size: 40px;
+  }
+
+  /* ==============================
+     KONTAKT
+  ============================== */
+
+  .contact {
+    min-height: 60vh;
+
+    padding: 80px 20px;
+  }
+
+  .contact h2 {
+    font-size: 40px;
+  }
+
+  /* ==============================
+     FOOTER
+  ============================== */
 
   footer {
-    padding: 30px 25px;
+    padding: 30px 20px;
 
     flex-direction: column;
 
