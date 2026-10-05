@@ -443,7 +443,7 @@ footer {
 
   .gallery {
     /* Galerie insgesamt kleiner */
-    width: 90%;
+    width: 50%;
 
     margin: 0 auto;
 
@@ -471,24 +471,6 @@ footer {
     object-fit: cover;
     display: block;
   }
-
-
-  /* ==============================
-     TEXT BEI BILDERN
-  ============================== */
-
-  .photo-info {
-    padding: 6px 0;
-
-    font-size: 7px;
-  }
-
-  .photo-category {
-    padding: 6px 0;
-
-    font-size: 7px;
-  }
-
 
   /* ==============================
      ABOUT
