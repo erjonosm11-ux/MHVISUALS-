@@ -432,7 +432,7 @@ footer {
 
   /* GALERIE */
   .gallery {
-    width: 100%;
+    width: 85%;
     margin: 0;
 
     display: grid;
