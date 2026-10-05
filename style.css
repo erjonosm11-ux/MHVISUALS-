@@ -151,40 +151,57 @@ nav a:hover {
   width: 100%;
 
   display: grid;
-
-  /* 3 GLEICH GROSSE SPALTEN */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   gap: 15px;
 }
 
-/* ==================================
-   GALERIE BILDER
-================================== */
-
 .gallery-photo {
   width: 100%;
+  overflow: hidden;
 }
 
-/* ALLE BILDER GLEICH GROSS */
+/* BILDER */
 
 .gallery-photo img {
   width: 100%;
-  height: 500px;
+
+  /* WICHTIG */
+  aspect-ratio: 3 / 4;
 
   display: block;
-
   object-fit: cover;
 
   transition: transform 0.5s ease;
 }
 
-/* ==================================
-   HOVER
-================================== */
+/* HOVER */
 
 .gallery-photo:hover img {
-  transform: scale(1.05);
+  transform: scale(1.04);
+}
+
+/* TEXT */
+
+.photo-info {
+  padding: 8px 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #777;
+
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.photo-category {
+  padding: 8px 0;
+
+  color: #aaa;
+
+  font-size: 8px;
+  letter-spacing: 2px;
 }
 
 /* ==================================
@@ -427,6 +444,7 @@ footer {
 
     /* ALLE BILDER GLEICH HOCH */
     height: 420px;
+    aspect-ratio: 3 / 4;
 
     object-fit: cover;
   }
