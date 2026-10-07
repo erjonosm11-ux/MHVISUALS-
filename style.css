@@ -135,7 +135,6 @@ nav a:hover {
 }
 
 .portfolio-title h2 {
-  font-family: Georgia, serif;
   font-weight: normal;
 
   font-size: clamp(45px, 5vw, 80px);
@@ -284,55 +283,264 @@ nav a:hover {
 }
 
 /* ==================================
-   KONTAKT
+   BUCHUNG & SOCIAL MEDIA
 ================================== */
 
 .contact {
-  min-height: 70vh;
-
-  padding: 120px 20px;
+  min-height: 100vh;
+  padding: 130px 7%;
+  background-color: #080808;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
 
+/* ==================================
+   ÜBERSCHRIFT
+================================== */
+
+.contact-heading {
+  width: 100%;
+  max-width: 1100px;
+
+  margin-bottom: 60px;
+
+  text-align: center;
+}
+
+.contact-label {
+  margin-bottom: 25px;
+
+  color: #888;
+
+  font-size: 10px;
+  letter-spacing: 5px;
+}
+
+.contact-heading h2 {
+  margin: 0;
+  font-style: bold;
+  font-size: 75px;
+
+  line-height: 0.85;
+  letter-spacing: -3px;
+}
+
+.contact-description {
+  max-width: 750px;
+
+  margin: 35px auto 0;
+
+  color: #999;
+
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: 2px;
+}
+
+/* ==================================
+   KARTEN
+================================== */
+
+.contact-cards {
+  width: 100%;
+  max-width: 1400px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+
+  /* Beide Karten gleich hoch */
+  align-items: stretch;
+}
+
+/* ==================================
+   EINZELNE KARTE
+================================== */
+
+.contact-card {
+  position: relative;
+
+  width: 100%;
+  height: 500px;
+
+  border: 1px solid #333;
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ==================================
+   DUNKLER FILTER
+================================== */
+
+.contact-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.62);
+
+  transition: background 0.4s ease;
+}
+
+.contact-card:hover::before {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* ==================================
+   HINTERGRUNDBILDER
+================================== */
+
+.booking-card {
+  background-image: url("img/contact-booking.jpg");
+}
+
+.instagram-card {
+  background-image: url("img/contact-instagram.jpg");
+}
+
+/* ==================================
+   INHALT
+================================== */
+
+.contact-card-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 45px 50px;
+
+  display: grid;
+
+  /* Jede Karte bekommt exakt dieselben Bereiche */
+  grid-template-rows:
+    70px
+    60px
+    110px
+    100px;
+
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* ==================================
+   ICON
+================================== */
+
+.contact-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-icon svg {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+  stroke: white;
+  stroke-width: 1.8;
+}
+
+.contact-icon .instagram-dot {
+  fill: white;
+  stroke: none;
+}
+/* ==================================
+   TITEL
+================================== */
+
+.contact-card h3 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: normal;
+
+  letter-spacing: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==================================
+   TEXT
+================================== */
+
+.contact-card p {
+  width: 100%;
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #bbb;
+
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+
+  display: flex;
   justify-content: center;
   align-items: center;
 
   text-align: center;
 }
 
-.contact p {
-  color: #777;
+/* ==================================
+   BUTTON
+================================== */
 
-  font-size: 10px;
-  letter-spacing: 3px;
-}
+.contact-card a {
+  width: 100%;
+  max-width: 350px;
 
-.contact h2 {
-  margin: 25px 0 50px;
+  padding: 20px 25px;
 
-  font-size: clamp(40px, 5vw, 75px);
-}
+  border: 1px solid #aaa;
 
-.contact a {
-  padding: 17px 28px;
+  background: rgba(0, 0, 0, 0.3);
 
-  background-color: white;
-  color: black;
+  color: white;
 
   text-decoration: none;
 
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  transition: 0.3s;
+  font-size: 10px;
+  letter-spacing: 3px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
-.contact a:hover {
-  background-color: #aaa;
+.contact-card a:hover {
+  background: white;
+  color: black;
 }
 
+.contact-card a span {
+  font-size: 18px;
+}
 /* ==================================
    FOOTER
 ================================== */
@@ -356,7 +564,6 @@ footer {
 ================================== */
 
 @media (max-width: 800px) {
-
   /* NAVIGATION */
   header {
     height: 65px;
@@ -376,7 +583,6 @@ footer {
     font-size: 7px;
     letter-spacing: 0.5px;
   }
-
 
   /* HERO */
   .hero {
@@ -404,7 +610,6 @@ footer {
     font-size: 9px;
   }
 
-
   /* PORTFOLIO */
   .portfolio {
     min-height: auto;
@@ -426,10 +631,9 @@ footer {
     line-height: 0.9;
   }
 
-
   /* GALERIE */
   .gallery {
-    width: 100%;
+    width: 85%;
     margin: 0;
 
     display: grid;
@@ -439,7 +643,6 @@ footer {
 
     gap: 8px;
   }
-
 
   /* EINZELNE FOTO-KARTE */
   .gallery-photo {
@@ -451,7 +654,6 @@ footer {
     overflow: visible;
   }
 
-
   /* BILD-WRAPPER */
   .image-wrapper {
     width: 100%;
@@ -461,7 +663,6 @@ footer {
 
     overflow: hidden;
   }
-
 
   /* FOTO */
   .image-wrapper img {
@@ -473,7 +674,6 @@ footer {
     object-fit: cover;
     object-position: center;
   }
-
 
   /* TEXT UNTER DEM BILD */
   .photo-info {
@@ -495,7 +695,6 @@ footer {
     letter-spacing: 0.5px;
   }
 
-
   /* TEXT OBERHALB */
   .photo-category {
     padding: 6px 2px;
@@ -507,7 +706,6 @@ footer {
     font-size: 7px;
     letter-spacing: 1px;
   }
-
 
   /* ABOUT */
   .about {
@@ -532,28 +730,132 @@ footer {
     line-height: 1.6;
   }
 
+  /* ==================================
+   CONTACT - HANDY
+================================== */
 
-  /* KONTAKT */
   .contact {
-    min-height: 50vh;
-    padding: 60px 20px;
+    min-height: auto;
+    padding: 80px 15px;
   }
 
-  .contact p {
-    font-size: 9px;
+  /* ÜBERSCHRIFT */
+
+  .contact-heading {
+    width: 100%;
+    margin-bottom: 40px;
+
+    text-align: center;
   }
 
-  .contact h2 {
-    margin: 20px 0 35px;
-    font-size: 38px;
+  .contact-label {
+    margin-bottom: 20px;
+
+    font-size: 8px;
+    letter-spacing: 4px;
   }
 
-  .contact a {
-    padding: 14px 20px;
-    font-size: 9px;
+  .contact-heading h2 {
+    margin: 0;
+
+    font-size: 45px;
+    line-height: 0.9;
+    letter-spacing: -2px;
   }
 
+  .contact-description {
+    max-width: 90%;
 
+    margin: 25px auto 0;
+
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 1px;
+  }
+
+  /* KARTEN UNTEREINANDER */
+
+  .contact-cards {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  /* KARTE */
+
+  .contact-card {
+    width: 100%;
+    height: 360px;
+  }
+
+  /* INHALT */
+
+  .contact-card-content {
+    width: 100%;
+    height: 100%;
+
+    padding: 25px 20px;
+
+    display: grid;
+
+    grid-template-rows:
+      55px
+      50px
+      90px
+      80px;
+
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  /* ICON */
+
+  .contact-icon {
+    margin: 0;
+
+    font-size: 35px;
+  }
+
+  /* TITEL */
+
+  .contact-card h3 {
+    margin: 0;
+
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+
+  /* TEXT */
+
+  .contact-card p {
+    max-width: 280px;
+
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  /* BUTTON */
+
+  .contact-card a {
+    width: 100%;
+    max-width: 280px;
+
+    padding: 16px 18px;
+
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .contact-card a span {
+    font-size: 16px;
+  }
   /* FOOTER */
   footer {
     padding: 25px 15px;
