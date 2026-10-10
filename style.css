@@ -1,3 +1,4 @@
+
 /* ==================================
    GRUNDEINSTELLUNGEN
 ================================== */
@@ -18,18 +19,22 @@ body {
   font-family: Arial, sans-serif;
 }
 
+
 /* ==================================
    NAVIGATION
 ================================== */
 
 header {
   height: 100px;
+  padding: 0 7%;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 7%;
+  position: relative;
+  z-index: 1000;
+  background-color: #0c0c0c;
 }
 
 .logo {
@@ -37,24 +42,32 @@ header {
   letter-spacing: 2px;
 }
 
-nav {
+header nav {
   display: flex;
+  align-items: center;
   gap: 40px;
 }
 
-nav a {
+header nav a {
   color: white;
   text-decoration: none;
 
   font-size: 11px;
   letter-spacing: 2px;
 
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
 }
 
-nav a:hover {
+header nav a:hover {
   opacity: 0.5;
 }
+
+/* Hamburger auf dem PC verstecken */
+
+.menu-toggle {
+  display: none;
+}
+
 
 /* ==================================
    HERO
@@ -62,7 +75,6 @@ nav a:hover {
 
 .hero {
   min-height: 75vh;
-
   padding: 0 7%;
 
   display: flex;
@@ -72,7 +84,6 @@ nav a:hover {
 
 .hero h2 {
   font-size: clamp(45px, 6vw, 95px);
-
   line-height: 0.92;
   letter-spacing: -3px;
 }
@@ -101,27 +112,20 @@ nav a:hover {
   letter-spacing: 2px;
 }
 
+
 /* ==================================
    PORTFOLIO
 ================================== */
 
 .portfolio {
   position: relative;
-
   min-height: 100vh;
-
   padding: 120px 7%;
 }
 
-/* ==================================
-   PORTFOLIO TITEL
-================================== */
-
 .portfolio-title {
   position: relative;
-
   width: 100%;
-
   margin-bottom: 60px;
 }
 
@@ -136,11 +140,54 @@ nav a:hover {
 
 .portfolio-title h2 {
   font-weight: normal;
-
   font-size: clamp(45px, 5vw, 80px);
-
   line-height: 0.9;
 }
+
+
+/* ==================================
+   PORTFOLIO FILTER
+================================== */
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-bottom: 35px;
+}
+
+.filter-btn {
+  padding: 12px 18px;
+
+  background: transparent;
+  border: 1px solid #333;
+
+  color: #888;
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.filter-btn:hover {
+  color: white;
+  border-color: white;
+}
+
+.filter-btn.active {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
 
 /* ==================================
    GALERIE
@@ -150,62 +197,40 @@ nav a:hover {
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 15px;
 }
 
 .gallery-photo {
   width: 100%;
+  min-width: 0;
   overflow: hidden;
 }
 
-/* BILDER */
+.image-wrapper {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
 
 .gallery-photo img {
   width: 100%;
-
-  /* WICHTIG */
-  aspect-ratio: 3 / 4;
+  height: 100%;
 
   display: block;
   object-fit: cover;
+  object-position: center;
 
   transition: transform 0.5s ease;
 }
-
-/* HOVER */
 
 .gallery-photo:hover img {
   transform: scale(1.04);
 }
 
-/* TEXT */
-
-.photo-info {
-  padding: 8px 0;
-
-  display: flex;
-  justify-content: space-between;
-
-  color: #777;
-
-  font-size: 8px;
-  letter-spacing: 1px;
+.gallery-photo.is-hidden {
+  display: none;
 }
-
-.photo-category {
-  padding: 8px 0;
-
-  color: #aaa;
-
-  font-size: 8px;
-  letter-spacing: 2px;
-}
-
-/* ==================================
-   TEXT OBERHALB BILD
-================================== */
 
 .photo-category {
   padding: 10px;
@@ -214,30 +239,27 @@ nav a:hover {
 
   font-size: 8px;
   letter-spacing: 2px;
+
   background: none;
 }
 
-/* ==================================
-   TEXT UNTERHALB BILD
-================================== */
-
 .photo-info {
   min-height: 35px;
-
   padding: 10px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 15px;
 
   color: #777;
 
   font-size: 8px;
   letter-spacing: 1px;
+
   background: none;
 }
+
 
 /* ==================================
    ABOUT
@@ -245,7 +267,6 @@ nav a:hover {
 
 .about {
   min-height: 80vh;
-
   padding: 150px 15%;
 
   background-color: #151515;
@@ -268,19 +289,17 @@ nav a:hover {
   max-width: 900px;
 
   font-size: clamp(40px, 5vw, 75px);
-
   line-height: 0.95;
 }
 
 .about-text {
   max-width: 550px;
-
   margin-top: 40px;
 
   color: #999;
-
   line-height: 1.8;
 }
+
 
 /* ==================================
    BUCHUNG & SOCIAL MEDIA
@@ -289,6 +308,7 @@ nav a:hover {
 .contact {
   min-height: 100vh;
   padding: 130px 7%;
+
   background-color: #080808;
 
   display: flex;
@@ -296,9 +316,8 @@ nav a:hover {
   align-items: center;
 }
 
-/* ==================================
-   ÜBERSCHRIFT
-================================== */
+
+/* ÜBERSCHRIFT */
 
 .contact-heading {
   width: 100%;
@@ -320,7 +339,8 @@ nav a:hover {
 
 .contact-heading h2 {
   margin: 0;
-  font-style: bold;
+
+  font-weight: bold;
   font-size: 75px;
 
   line-height: 0.85;
@@ -329,7 +349,6 @@ nav a:hover {
 
 .contact-description {
   max-width: 750px;
-
   margin: 35px auto 0;
 
   color: #999;
@@ -339,8 +358,9 @@ nav a:hover {
   letter-spacing: 2px;
 }
 
+
 /* ==================================
-   KARTEN
+   CONTACT KARTEN
 ================================== */
 
 .contact-cards {
@@ -348,26 +368,20 @@ nav a:hover {
   max-width: 1400px;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 25px;
 
-  /* Beide Karten gleich hoch */
   align-items: stretch;
 }
-
-/* ==================================
-   EINZELNE KARTE
-================================== */
 
 .contact-card {
   position: relative;
 
   width: 100%;
+  min-width: 0;
   height: 500px;
 
   border: 1px solid #333;
-
   overflow: hidden;
 
   background-size: cover;
@@ -375,9 +389,8 @@ nav a:hover {
   background-repeat: no-repeat;
 }
 
-/* ==================================
-   DUNKLER FILTER
-================================== */
+
+/* DUNKLER FILTER */
 
 .contact-card::before {
   content: "";
@@ -394,9 +407,8 @@ nav a:hover {
   background: rgba(0, 0, 0, 0.45);
 }
 
-/* ==================================
-   HINTERGRUNDBILDER
-================================== */
+
+/* HINTERGRUNDBILDER */
 
 .booking-card {
   background-image: url("img/contact-booking.jpg");
@@ -406,9 +418,8 @@ nav a:hover {
   background-image: url("img/contact-instagram.jpg");
 }
 
-/* ==================================
-   INHALT
-================================== */
+
+/* KARTENINHALT */
 
 .contact-card-content {
   position: relative;
@@ -420,13 +431,7 @@ nav a:hover {
   padding: 45px 50px;
 
   display: grid;
-
-  /* Jede Karte bekommt exakt dieselben Bereiche */
-  grid-template-rows:
-    70px
-    60px
-    110px
-    100px;
+  grid-template-rows: 70px 60px 110px 100px;
 
   align-content: center;
   justify-items: center;
@@ -435,9 +440,8 @@ nav a:hover {
   text-align: center;
 }
 
-/* ==================================
-   ICON
-================================== */
+
+/* ICONS */
 
 .contact-icon {
   width: 45px;
@@ -461,9 +465,9 @@ nav a:hover {
   fill: white;
   stroke: none;
 }
-/* ==================================
-   TITEL
-================================== */
+
+
+/* KARTENTITEL */
 
 .contact-card h3 {
   margin: 0;
@@ -472,17 +476,17 @@ nav a:hover {
 
   font-size: 13px;
   font-weight: normal;
-
   letter-spacing: 5px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  text-align: center;
 }
 
-/* ==================================
-   TEXT
-================================== */
+
+/* KARTENTEXT */
 
 .contact-card p {
   width: 100%;
@@ -503,9 +507,8 @@ nav a:hover {
   text-align: center;
 }
 
-/* ==================================
-   BUTTON
-================================== */
+
+/* BUTTONS */
 
 .contact-card a {
   width: 100%;
@@ -514,11 +517,9 @@ nav a:hover {
   padding: 20px 25px;
 
   border: 1px solid #aaa;
-
   background: rgba(0, 0, 0, 0.3);
 
   color: white;
-
   text-decoration: none;
 
   display: flex;
@@ -541,6 +542,8 @@ nav a:hover {
 .contact-card a span {
   font-size: 18px;
 }
+
+
 /* ==================================
    FOOTER
 ================================== */
@@ -559,20 +562,21 @@ footer {
   letter-spacing: 1px;
 }
 
-/* ==================================
-   HANDY VERSION
-================================== */
 
 /* ==================================
    HANDY VERSION
 ================================== */
 
 @media (max-width: 800px) {
+
   /* NAVIGATION */
 
   header {
     height: 70px;
     padding: 0 16px;
+
+    position: relative;
+    z-index: 1000;
   }
 
   .logo {
@@ -580,20 +584,116 @@ footer {
     letter-spacing: 1px;
   }
 
-  nav {
-    gap: 10px;
+
+  /* ==================================
+     HAMBURGER MENÜ
+  ================================== */
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    position: relative;
+    z-index: 1002;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
   }
 
-  nav a {
-    font-size: 8px;
-    letter-spacing: 0.3px;
+  .menu-toggle span {
+    width: 26px;
+    height: 2px;
+
+    display: block;
+    background: white;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
   }
 
-  /* HERO */
+
+  /* MENÜ GESCHLOSSEN */
+
+  header nav {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+
+    padding: 15px 0;
+
+    background: #111;
+    border-bottom: 1px solid #333;
+
+    z-index: 1001;
+  }
+
+
+  /* MENÜ GEÖFFNET */
+
+  header nav.menu-open {
+    display: flex;
+  }
+
+  header nav a {
+    display: block;
+    width: 100%;
+
+    padding: 16px 20px;
+
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  header nav a:hover {
+    background: #222;
+    opacity: 1;
+  }
+
+
+  /* HAMBURGER WIRD ZUM X */
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+
+  /* ==================================
+     HERO
+  ================================== */
 
   .hero {
     min-height: 60vh;
     padding: 20px 16px 45px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -607,17 +707,22 @@ footer {
 
   .hero p {
     margin-top: 20px;
+
     font-size: 10px;
     letter-spacing: 2px;
   }
 
   .hero-button {
     margin-top: 25px;
+
     font-size: 9px;
     letter-spacing: 1.5px;
   }
 
-  /* PORTFOLIO */
+
+  /* ==================================
+     PORTFOLIO
+  ================================== */
 
   .portfolio {
     min-height: auto;
@@ -631,6 +736,7 @@ footer {
 
   .portfolio-title p {
     margin-bottom: 12px;
+
     font-size: 8px;
     letter-spacing: 2px;
   }
@@ -640,11 +746,33 @@ footer {
     line-height: 0.9;
   }
 
-  /* GALERIE */
+
+  /* PORTFOLIO FILTER */
+
+  .gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-bottom: 25px;
+  }
+
+  .filter-btn {
+    padding: 10px 12px;
+
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+
+  /* ==================================
+     GALERIE
+  ================================== */
 
   .gallery {
     width: 100%;
     margin: 0 auto;
+
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
@@ -665,7 +793,9 @@ footer {
   .image-wrapper img {
     width: 100%;
     height: 100%;
+
     display: block;
+
     object-fit: cover;
     object-position: center;
   }
@@ -673,19 +803,26 @@ footer {
   .photo-info {
     min-height: 0;
     padding: 5px 0;
+
     background: none;
+
     font-size: 7px;
     letter-spacing: 0.5px;
   }
 
   .photo-category {
     padding: 5px 0;
+
     background: none;
+
     font-size: 7px;
     letter-spacing: 1px;
   }
 
-  /* ABOUT */
+
+  /* ==================================
+     ABOUT
+  ================================== */
 
   .about {
     min-height: auto;
@@ -694,6 +831,7 @@ footer {
 
   .section-name {
     margin-bottom: 20px;
+
     font-size: 8px;
     letter-spacing: 3px;
   }
@@ -707,9 +845,11 @@ footer {
   .about-text {
     max-width: 100%;
     margin-top: 30px;
+
     font-size: 13px;
     line-height: 1.7;
   }
+
 
   /* ==================================
      CONTACT
@@ -723,17 +863,20 @@ footer {
   .contact-heading {
     width: 100%;
     margin-bottom: 35px;
+
     text-align: center;
   }
 
   .contact-label {
     margin-bottom: 18px;
+
     font-size: 8px;
     letter-spacing: 4px;
   }
 
   .contact-heading h2 {
     margin: 0;
+
     font-size: clamp(35px, 10vw, 46px);
     line-height: 0.95;
     letter-spacing: -2px;
@@ -742,29 +885,36 @@ footer {
   .contact-description {
     max-width: 330px;
     margin: 25px auto 0;
+
     font-size: 11px;
     line-height: 1.7;
     letter-spacing: 0.5px;
   }
+
 
   /* ZWEI KARTEN NEBENEINANDER */
 
   .contact-cards {
     width: 100%;
     max-width: 100%;
+
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
+
     align-items: stretch;
   }
 
   .contact-card {
     width: 100%;
     min-width: 0;
+
     height: auto;
     min-height: 320px;
+
     overflow: hidden;
   }
+
 
   /* KARTENINHALT */
 
@@ -772,6 +922,7 @@ footer {
     width: 100%;
     height: 100%;
     min-height: 320px;
+
     padding: 22px 10px;
 
     display: flex;
@@ -783,11 +934,13 @@ footer {
     text-align: center;
   }
 
+
   /* ICONS */
 
   .contact-icon {
     width: 34px;
     height: 34px;
+
     margin: 0;
     flex-shrink: 0;
 
@@ -799,9 +952,11 @@ footer {
   .contact-icon svg {
     width: 100%;
     height: 100%;
+
     fill: none;
     stroke: white;
     stroke-width: 1.8;
+
     stroke-linecap: round;
     stroke-linejoin: round;
   }
@@ -811,11 +966,13 @@ footer {
     stroke: none;
   }
 
+
   /* KARTENTITEL */
 
   .contact-card h3 {
     width: 100%;
     min-height: 32px;
+
     margin: 0;
 
     display: flex;
@@ -826,24 +983,30 @@ footer {
     font-weight: normal;
     letter-spacing: 0.8px;
     line-height: 1.4;
+
     overflow-wrap: anywhere;
   }
+
 
   /* KARTENTEXT */
 
   .contact-card p {
     width: 100%;
     max-width: 100%;
+
     margin: 0;
 
     display: block;
 
     color: #bbb;
+
     font-size: 10px;
     line-height: 1.5;
     letter-spacing: 0;
+
     overflow-wrap: break-word;
   }
+
 
   /* BUTTONS */
 
@@ -851,6 +1014,7 @@ footer {
     width: 100%;
     max-width: none;
     min-height: 44px;
+
     margin-top: auto;
     padding: 12px 8px;
 
@@ -862,6 +1026,7 @@ footer {
     font-size: 8px;
     line-height: 1.4;
     letter-spacing: 0;
+
     text-align: left;
     overflow-wrap: anywhere;
   }
@@ -871,36 +1036,36 @@ footer {
     flex-shrink: 0;
   }
 
-  /* FOOTER */
+
+  /* ==================================
+     FOOTER
+  ================================== */
 
   footer {
     padding: 25px 16px;
+
     flex-direction: column;
     gap: 8px;
+
     font-size: 8px;
     line-height: 1.5;
   }
+
 }
+
 
 /* ==================================
    EXTRA KLEINE HANDYS
 ================================== */
 
 @media (max-width: 360px) {
+
   header {
     padding: 0 10px;
   }
 
   .logo {
     font-size: 15px;
-  }
-
-  nav {
-    gap: 7px;
-  }
-
-  nav a {
-    font-size: 7px;
   }
 
   .contact {
@@ -929,167 +1094,10 @@ footer {
     font-size: 7px;
     padding: 10px 6px;
   }
-}
-/* ==================================
-   PORTFOLIO FILTER BUTTONS
-================================== */
-
-.gallery-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 35px;
-}
-
-.filter-btn {
-  padding: 12px 18px;
-  background: transparent;
-  border: 1px solid #333;
-  color: #888;
-
-  font-size: 10px;
-  letter-spacing: 2px;
-
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* Wenn die Maus über einen Button fährt */
-
-.filter-btn:hover {
-  color: white;
-  border-color: white;
-}
-
-/* Der aktuell ausgewählte Button */
-
-.filter-btn.active {
-  background: white;
-  color: black;
-  border-color: white;
-}
-
-/* Fotos ausblenden, die nicht zur Kategorie gehören */
-
-.gallery-photo.is-hidden {
-  display: none;
-}
-
-/* Filterbuttons auf dem Handy */
-
-@media (max-width: 800px) {
-  .gallery-filters {
-    gap: 7px;
-    margin-bottom: 25px;
-  }
 
   .filter-btn {
-    padding: 10px 12px;
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
-}
-
-/* ==================================
-   HAMBURGER MENÜ
-================================== */
-
-/* Auf dem PC versteckt */
-.menu-toggle {
-  display: none;
-}
-
-/* HANDY VERSION */
-@media (max-width: 800px) {
-  header {
-    position: relative;
-    z-index: 100;
+    padding: 9px 8px;
+    font-size: 7px;
   }
 
-  /* Hamburger-Button */
-  .menu-toggle {
-    width: 35px;
-    height: 35px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-
-    background: transparent;
-    border: none;
-    cursor: pointer;
-
-    z-index: 102;
-  }
-
-  /* Die drei Striche */
-  .menu-toggle span {
-    width: 25px;
-    height: 2px;
-    background: white;
-
-    display: block;
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
-  }
-
-  /* Navigation zunächst verstecken */
-  header nav {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-
-    background: #111;
-    border-bottom: 0 solid #333;
-
-    visibility: hidden;
-    transition:
-      max-height 0.3s ease,
-      padding 0.3s ease,
-      visibility 0.3s ease;
-  }
-
-  /* Geöffnetes Menü */
-  header nav.menu-open {
-    max-height: 260px;
-    padding: 20px 0;
-    border-bottom: 1px solid #333;
-    visibility: visible;
-  }
-
-  /* Navigationslinks */
-  header nav a {
-    width: 100%;
-    padding: 15px 20px;
-
-    text-align: center;
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-
-  /* Hamburger wird zum X */
-  .menu-toggle.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
 }
