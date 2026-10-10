@@ -5,9 +5,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Swiss Football Photography</title>
+    <title>MHVISUALS | Swiss Football Photography</title>
 
     <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js" defer></script>
   </head>
 
   <body>
@@ -17,13 +19,22 @@
 
     <header>
       <h1 class="logo">MHVISUALS.</h1>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
       <nav>
-        <a href="#portfolio"> PORTFOLIO </a>
-
-        <a href="#about"> ÜBER MICH </a>
-
-        <a href="#contact"> KONTAKT </a>
+        <a href="#portfolio">PORTFOLIO</a>
+        <a href="#about">ÜBER MICH</a>
+        <a href="#contact">KONTAKT</a>
       </nav>
     </header>
 
@@ -58,86 +69,132 @@
         </h2>
       </div>
 
-      <!-- =====================
-             GALERIE
-        ====================== -->
+      <!-- =========================
+           FILTER BUTTONS
+      ========================== -->
+
+      <div class="gallery-filters" role="group" aria-label="Fotos filtern">
+        <button
+          type="button"
+          class="filter-btn active"
+          data-filter="all"
+          aria-pressed="true"
+        >
+          ALL WORK
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-filter="matchday"
+          aria-pressed="false"
+        >
+          MATCHDAY
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-filter="players"
+          aria-pressed="false"
+        >
+          PLAYERS
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-filter="details"
+          aria-pressed="false"
+        >
+          DETAILS
+        </button>
+      </div>
+
+      <!-- =========================
+           FOTOGALERIE
+      ========================== -->
 
       <div class="gallery">
-        <!-- =====================
-                 FOTO 1
-            ====================== -->
+        <!-- FOTO 1 - MATCHDAY -->
 
-        <div class="gallery-photo small photo-1">
-          <!-- WICHTIG:
-                     Bild liegt im Wrapper -->
-
-          <div class="image-wrapper">
-            <img src="img/Download (1).jpg" alt="Fussball Fotografie" />
-          </div>
-
-          <!-- Text liegt AUSSERHALB -->
-
-          <div class="photo-info"></div>
-        </div>
-
-        <!-- =====================
-                 FOTO 2
-            ====================== -->
-
-        <div class="gallery-photo large photo-2">
+        <div class="gallery-photo small photo-1" data-category="matchday">
           <div class="image-wrapper">
             <img
-              src="img/Download (2).jpg"
-              alt="Matchday Fussball Fotografie"
+              src="img/Download (1).jpg"
+              alt="Fussball Fotografie"
+              loading="lazy"
             />
           </div>
 
           <div class="photo-info"></div>
         </div>
 
-        <!-- =====================
-                 FOTO 3
-            ====================== -->
+        <!-- FOTO 2 - PLAYERS -->
 
-        <div class="gallery-photo small photo-3">
+        <div class="gallery-photo large photo-2" data-category="players">
           <div class="image-wrapper">
-            <img src="img/Download (3).jpg" alt="Fussball Details" />
+            <img
+              src="img/Download (2).jpg"
+              alt="Matchday Fussball Fotografie"
+              loading="lazy"
+            />
           </div>
 
           <div class="photo-info"></div>
         </div>
 
-        <!-- =====================
-                 FOTO 4
-            ====================== -->
+        <!-- FOTO 3 - DETAILS -->
 
-        <div class="gallery-photo medium photo-4">
+        <div class="gallery-photo small photo-3" data-category="details">
           <div class="image-wrapper">
-            <img src="img/Download.jpg" alt="Fussball Emotionen" />
+            <img
+              src="img/Download (3).jpg"
+              alt="Fussball Details"
+              loading="lazy"
+            />
           </div>
 
           <div class="photo-info"></div>
         </div>
 
-        <!-- =====================
-                 FOTO 5
-            ====================== -->
+        <!-- FOTO 4 - MATCHDAY -->
 
-        <div class="gallery-photo large photo-5">
+        <div class="gallery-photo medium photo-4" data-category="matchday">
           <div class="image-wrapper">
-            <img src="img/Noa Lang X David Neres.jpg" alt="Fussballspiel" />
+            <img
+              src="img/Download.jpg"
+              alt="Fussball Emotionen"
+              loading="lazy"
+            />
           </div>
 
           <div class="photo-info"></div>
         </div>
 
-        <!-- =====================
-                 FOTO 6
-            ====================== -->
+        <!-- FOTO 5 - PLAYERS -->
 
-        <div class="gallery-photo small photo-6">
+        <div class="gallery-photo large photo-5" data-category="players">
           <div class="image-wrapper">
-            <img src="img/football6.jpg" alt="Fussball Spieler" />
+            <img
+              src="img/Noa Lang X David Neres.jpg"
+              alt="Fussballspiel"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="photo-info"></div>
+        </div>
+
+        <!-- FOTO 6 - DETAILS -->
+
+        <div class="gallery-photo small photo-6" data-category="details">
+          <div class="image-wrapper">
+            <img
+              src="img/football6.jpg"
+              alt="Fussball Spieler"
+              loading="lazy"
+            />
           </div>
 
           <div class="photo-info"></div>
@@ -164,9 +221,9 @@
       </p>
     </section>
 
-    <!-- ==================================
-     BUCHUNG & SOCIAL MEDIA
-================================== -->
+    <!-- =========================
+         BUCHUNG & SOCIAL MEDIA
+    ========================== -->
 
     <section id="contact" class="contact">
       <div class="contact-heading">
@@ -183,10 +240,10 @@
         </p>
       </div>
 
-      <!-- KARTEN -->
+      <!-- CONTACT KARTEN -->
 
       <div class="contact-cards">
-        <!-- BUCHUNG -->
+        <!-- BUCHUNGSANFRAGE -->
 
         <div class="contact-card booking-card">
           <div class="contact-card-content">
@@ -250,6 +307,7 @@
         </div>
       </div>
     </section>
+
     <!-- =========================
          FOOTER
     ========================== -->
@@ -257,7 +315,6 @@
     <footer>
       <p>© 2026 MHVISUALS Football Photography</p>
 
-      <p></p>
       <p>076 451 89 02 / Football Photography</p>
     </footer>
   </body>
