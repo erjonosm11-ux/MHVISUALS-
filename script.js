@@ -25,54 +25,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/* ==================================
-   MOBILES HAMBURGER MENÜ
-================================== */
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.querySelector(".menu-toggle");
+  const navigation = document.querySelector("#main-nav");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector("#main-nav");
-
-  if (!menuToggle || !nav) return;
-
-  function closeMenu() {
-    menuToggle.classList.remove("active");
-    nav.classList.remove("menu-open");
-
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Menü öffnen");
+  if (!menuButton || !navigation) {
+    console.error("Hamburger-Menü nicht gefunden!");
+    return;
   }
 
-  // Menü öffnen und schliessen
-  menuToggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("menu-open");
+  menuButton.addEventListener("click", function () {
+    const isOpen = navigation.classList.toggle("menu-open");
 
-    menuToggle.classList.toggle("active", isOpen);
-
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-
-    menuToggle.setAttribute(
+    menuButton.classList.toggle("active", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute(
       "aria-label",
-      isOpen ? "Menü schliessen" : "Menü öffnen",
+      isOpen ? "Menü schliessen" : "Menü öffnen"
     );
   });
 
-  // Menü schliessen, wenn ein Link angeklickt wird
-  nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  // Menü mit Escape schliessen
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-    }
-  });
-
-  // Menü beim Wechsel auf Desktop schliessen
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 800) {
-      closeMenu();
-    }
+  navigation.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navigation.classList.remove("menu-open");
+      menuButton.classList.remove("active");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Menü öffnen");
+    });
   });
 });
