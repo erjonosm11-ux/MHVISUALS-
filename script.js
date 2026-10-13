@@ -25,32 +25,91 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const menuButton = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector("#main-nav");
+/* ==================================
+   MOBILES HAMBURGER MENÜ
+================================== */
 
-  if (!menuButton || !navigation) {
-    console.error("Hamburger-Menü nicht gefunden!");
-    return;
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector("#main-nav");
+
+  if (!menuToggle || !nav) return;
+
+  function closeMenu() {
+    menuToggle.classList.remove("active");
+    nav.classList.remove("menu-open");
+
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Menü öffnen");
   }
 
-  menuButton.addEventListener("click", function () {
-    const isOpen = navigation.classList.toggle("menu-open");
+  // Menü öffnen und schliessen
+  menuToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("menu-open");
 
-    menuButton.classList.toggle("active", isOpen);
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-    menuButton.setAttribute(
+    menuToggle.classList.toggle("active", isOpen);
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+    menuToggle.setAttribute(
       "aria-label",
-      isOpen ? "Menü schliessen" : "Menü öffnen"
+      isOpen ? "Menü schliessen" : "Menü öffnen",
     );
   });
 
-  navigation.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      navigation.classList.remove("menu-open");
-      menuButton.classList.remove("active");
-      menuButton.setAttribute("aria-expanded", "false");
-      menuButton.setAttribute("aria-label", "Menü öffnen");
-    });
+  // Menü schliessen, wenn ein Link angeklickt wird
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Menü mit Escape schliessen
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+
+  // Menü beim Wechsel auf Desktop schliessen
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 800) {
+      closeMenu();
+    }
   });
 });
+// ==================================
+// BUCHUNGSFORMULAR
+// ==================================
+
+const bookingForm = document.querySelector("#booking-form");
+
+if (bookingForm) {
+  bookingForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.querySelector("#booking-name").value;
+    const email = document.querySelector("#booking-email").value;
+    const shooting = document.querySelector(
+      'input[name="shooting"]:checked',
+    ).value;
+    const date = document.querySelector("#booking-date").value;
+    const message = document.querySelector("#booking-message").value;
+
+    const empfaenger = "DEINEEMAIL@EMAIL.CH";
+
+    const betreff = "Buchungsanfrage MHVISUALS";
+
+    const nachricht =
+      `Name: ${name}\n` +
+      `E-Mail: ${email}\n` +
+      `Shooting: ${shooting}\n` +
+      `Datum: ${date || "Noch offen"}\n\n` +
+      `Nachricht:\n${message}`;
+
+    const mailtoLink =
+      `mailto:${empfaenger}` +
+      `?subject=${encodeURIComponent(betreff)}` +
+      `&body=${encodeURIComponent(nachricht)}`;
+
+    window.location.href = mailtoLink;
+  });
+}
