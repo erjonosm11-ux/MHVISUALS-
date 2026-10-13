@@ -222,86 +222,110 @@
     </section>
 
     <!-- =========================
-         BUCHUNG & SOCIAL MEDIA
-    ========================== -->
+     BUCHUNG & SOCIAL MEDIA
+========================== -->
 
-    <section id="contact" class="contact">
-      <div class="contact-heading">
-        <p class="contact-label">LET'S CONNECT</p>
+    <section id="contact" class="contact booking-section">
+      <div class="booking-container">
+        <div class="booking-heading">
+          <p>MHVISUALS. / BOOKING</p>
+          <h2>LET'S CREATE.</h2>
 
-        <h2>
-          BUCHUNG &<br />
-          SOCIAL MEDIA
-        </h2>
-
-        <p class="contact-description">
-          Du möchtest ein Shooting buchen oder mehr von meiner Arbeit sehen?
-          Hier kannst du mich direkt kontaktieren oder mir auf Instagram folgen.
-        </p>
-      </div>
-
-      <!-- CONTACT KARTEN -->
-
-      <div class="contact-cards">
-        <!-- BUCHUNGSANFRAGE -->
-
-        <div class="contact-card booking-card">
-          <div class="contact-card-content">
-            <div class="contact-icon">
-              <svg
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-
-                <path d="M3 7L12 14L21 7" />
-              </svg>
-            </div>
-
-            <h3>BUCHUNGSANFRAGE</h3>
-
-            <p>
-              Schreib mir direkt eine Nachricht für Anfragen, Preise oder
-              weitere Infos.
-            </p>
-
-            <a href="mailto:DEINEEMAIL@EMAIL.CH">
-              JETZT ANFRAGEN
-              <span>→</span>
-            </a>
-          </div>
+          <p class="booking-description">
+            Du möchtest ein Shooting buchen oder mehr von meiner Arbeit sehen?
+            Kontaktiere mich direkt oder entdecke meine Fotos und Videos auf
+            Instagram und TikTok.
+          </p>
         </div>
 
-        <!-- INSTAGRAM -->
+        <form id="booking-form" class="booking-form">
+          <div class="form-group">
+            <label for="booking-name">Dein Name</label>
+            <input
+              type="text"
+              id="booking-name"
+              placeholder="Vorname und Nachname"
+              required
+            />
+          </div>
 
-        <div class="contact-card instagram-card">
-          <div class="contact-card-content">
-            <div class="contact-icon">
-              <svg
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+          <div class="form-group">
+            <label for="booking-email">E-Mail-Adresse</label>
+            <input
+              type="email"
+              id="booking-email"
+              placeholder="name@beispiel.ch"
+              required
+            />
+          </div>
 
-                <circle cx="12" cy="12" r="4" />
+          <fieldset class="form-group shooting-options">
+            <legend>Welche Fotos brauchst du?</legend>
 
-                <circle cx="17.5" cy="6.5" r="1" class="instagram-dot" />
-              </svg>
-            </div>
+            <label>
+              <input
+                type="radio"
+                name="shooting"
+                value="Matchfotografie"
+                checked
+              />
+              Matchfotografie
+            </label>
 
-            <h3>INSTAGRAM</h3>
+            <label>
+              <input type="radio" name="shooting" value="Spielerporträts" />
+              Spielerporträts
+            </label>
 
-            <p>Mehr Einblicke, aktuelle Fotos und Behind the Scenes.</p>
+            <label>
+              <input type="radio" name="shooting" value="Teamshooting" />
+              Teamshooting
+            </label>
 
+            <label>
+              <input type="radio" name="shooting" value="Sonstiges" />
+              Sonstiges
+            </label>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="booking-date">Gewünschtes Datum</label>
+            <input type="date" id="booking-date" />
+          </div>
+
+          <div class="form-group">
+            <label for="booking-message">Deine Nachricht</label>
+            <textarea
+              id="booking-message"
+              rows="5"
+              placeholder="Wo findet das Spiel statt? Was stellst du dir vor?"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="booking-submit">
+            ANFRAGE VORBEREITEN <span>↗</span>
+          </button>
+        </form>
+
+        <div class="booking-socials">
+          <p>ODER FINDE MICH AUF SOCIAL MEDIA</p>
+
+          <div class="booking-social-buttons">
             <a
-              href="https://www.instagram.com/mhvisuals0?stkn=b3pzdGtmOXYxcmtn"
+              href="https://www.instagram.com/mhvisuals0"
               target="_blank"
               rel="noopener noreferrer"
             >
-              AUF INSTAGRAM
-              <span>→</span>
+              INSTAGRAM <span>↗</span>
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@DEINNAME"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TIKTOK <span>↗</span>
             </a>
           </div>
         </div>
